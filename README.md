@@ -5,10 +5,12 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.12+-green.svg)](https://www.python.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
-[![Modules](https://img.shields.io/badge/Modules-186-blue.svg)]()
-[![Tools](https://img.shields.io/badge/Tools-950+-orange.svg)]()
+[![Modules](https://img.shields.io/badge/Modules-188-blue.svg)]()
+[![Tools](https://img.shields.io/badge/Tools-960+-orange.svg)]()
 
-本项目包含 iFlow AI Agent 的核心模块和技能，提供完整的桌面自动化、浏览器控制、多代理协同、记忆系统、消息通道等功能。当前版本包含 **186个模块**，约 **950个工具**，支持高度可配置的自主代理系统。
+本项目包含 iFlow AI Agent 的核心模块和技能，提供完整的桌面自动化、浏览器控制、多代理协同、记忆系统、消息通道等功能。当前版本包含 **188个模块**，约 **960个工具**，支持高度可配置的自主代理系统。
+
+**2026-03-20 更新**: 新增统一交易系统模块（unified_trading.py）和ML预测模块（ml_predictor.py），整合fortune和stock-trading-system的所有功能。
 
 ## 🚀 快速开始
 
@@ -91,6 +93,63 @@ python mcp-server/server.py
 | `sector-rotation` | 板块轮动分析、主力资金流向、热点板块识别 |
 | `sentiment` | 情感分析、自动标注记忆情感倾向（看涨/看跌/中性） |
 | `data-aggregator` | 多数据源聚合（PostgreSQL、AKShare、东方财富API） |
+
+### 📈 统一交易系统（新增）
+
+**核心Python模块** (`modules/`)
+
+| 模块 | 文件 | 功能描述 |
+|------|------|----------|
+| **unified_trading** | `unified_trading.py` | 统一交易系统 - 整合所有数据源、技术分析、信号生成、风险评估 |
+| **ml_predictor** | `ml_predictor.py` | ML预测模块 - 模型管理、特征工程、股票预测、多代理分析 |
+
+**unified_trading.py 核心类**:
+
+| 类 | 功能 |
+|---|---|
+| `DataSourceManager` | 多数据源管理（腾讯API、东财API、新浪新闻） |
+| `TechnicalAnalyzer` | 技术指标计算（SMA、EMA、MACD、KDJ、RSI、Bollinger） |
+| `SignalGenerator` | 交易信号生成（综合多指标判断） |
+| `RiskAnalyzer` | 风险分析（VaR计算、仓位建议） |
+| `UnifiedTradingSystem` | 统一接口（完整股票分析） |
+
+**MCP工具**:
+
+| 工具 | 功能 |
+|------|------|
+| `stock_realtime` | 获取股票实时行情（腾讯API） |
+| `stock_kline` | 获取股票历史K线（东财API） |
+| `stock_news` | 搜索股票新闻（新浪API） |
+| `stock_analyze` | 完整股票分析（行情+指标+信号+风险） |
+| `calculate_indicators` | 计算技术指标 |
+| `calculate_position` | 计算建议仓位 |
+
+**ml_predictor.py 核心类**:
+
+| 类 | 功能 |
+|---|---|
+| `ModelManager` | 模型管理（加载、查询） |
+| `FeatureEngineer` | 特征工程（50+技术特征） |
+| `StockPredictor` | 股票预测器 |
+| `MultiAgentSystem` | 多代理系统（信号/风险/情感代理） |
+
+**已训练模型**:
+
+| 模型 | 准确率 | 股票数 | 描述 |
+|------|--------|--------|------|
+| `mainboard_5pct` | 54.38% | 4079 | 主板5%涨幅预测 |
+| `a_stock_10pct` | 54% | 250 | A股10%涨幅预测 |
+
+**使用示例**:
+
+```python
+# 测试统一交易系统
+cd .iflow/modules
+python unified_trading.py
+
+# 测试ML预测模块
+python ml_predictor.py
+```
 
 ### 🔗 集群与技能
 
