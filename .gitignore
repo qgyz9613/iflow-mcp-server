@@ -1,0 +1,124 @@
+# 敏感配置文件 - 绝对不能上传！
+secrets.json
+*.secret
+*.key
+*.pem
+.env
+.env.*
+oauth_creds.json
+AGENTS.md
+TOOLS_INDEX.md
+iflow_accounts.json
+
+# 用户数据
+browser-data/
+browser_data/
+desktop_data/
+sessions/
+logs/
+cache/
+temp/
+tmp/
+inbox/
+memory/
+workflow-state/
+workflow-data/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# 虚拟环境
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 日志和缓存
+*.log
+logs/
+cache/
+
+# 测试
+.coverage
+htmlcov/
+.pytest_cache/
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# 项目特定
+projects/
+knowledge/
+agents/
+channels/
+config/
+skills/
+scripts/
+acp/
+decision/
+improve_data/
+summarize_data/
+triage/
+selfrepair/
+
+# Node modules - 不要提交！
+node_modules/
+**/node_modules/
+
+# 测试文件
+test_*.py
+verify_*.py
+
+# 数据文件 - 不要提交！
+*-data/
+*-data/*.json
+selfrepair-data/
+heartbeat-data/
+heartbeat-scheduler-data/
+hooks-data/
+memory-data/
+memory-sqlite-data/
+improve-data/
+agents-data/
+llm-data/
+decision-data/
+workflow-data/
+workflow-state/
+inbox/
+sessions/
+cache/
+log/
+tmp/
+temp/
+desktop_data/
+browser_data/
+browser-data/
+
+# JSON 数据文件
+*.db
+*.sqlite
+*.json.bak
+repair-*.json
+
+# 日志
+logs/
+*.log
+
+# 临时文件
+*.tmp
+*.temp
+*.bak
